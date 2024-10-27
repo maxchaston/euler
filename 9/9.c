@@ -1,18 +1,20 @@
 #include <stdio.h>
+#define SUM 1000
 int main()
 {
-	long a;
-	long b;
-	long c;
-	for (a=1;;a++)
+	for (int a=1; a<SUM/3; a++)
 	{
-		for (b=2;;b++)
+		int b, c;
+		b=a+1;
+		c=1000-(a+b);
+		for (; b<c; b++)
 		{
-			for (;a+b+c<1001;c++)
+			c = 1000-(a+b);
+			printf("a:%d b:%d c:%d\n", a, b, c);
+			if (a*a+b*b == c*c)
 			{
-				if ((a*a + b*b) == (c*c))
-					printf("GOT: %ld %ld %ld\n", a, b, c);
-				printf("%ld %ld %ld\n", a, b, c);
+				printf("%d\n", a*b*c);
+				return 0;
 			}
 		}
 	}
