@@ -57,4 +57,5 @@ int* sieve_of_eratosthenes(int limit)
 		memcpy(nums, updated_nums, nums_size*sizeof(int));
 		free(updated_nums);
   }
+	return nums;
 }
